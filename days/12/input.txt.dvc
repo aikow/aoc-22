@@ -1,0 +1,4 @@
+outs:
+- md5: eb76d793364e3943fe910a2fd0693d10
+  size: 4674
+  path: input.txt
