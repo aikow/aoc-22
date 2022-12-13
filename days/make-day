@@ -17,5 +17,5 @@ def main [day: string] {
     | insert serde_json "1.0"
     | insert serde_yaml "0.9"
   }
-  | save -f Cargo.toml
+  | save Cargo.toml
 }
