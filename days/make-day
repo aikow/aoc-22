@@ -1,0 +1,21 @@
+#!/usr/bin/env nu
+
+def main [day: string] {
+  cargo new --bin $day --name $"day-($day)"
+  cd $day
+
+  touch input.txt example.txt
+
+  open Cargo.toml
+  | update dependencies { |it|
+    $it.dependencies
+    | insert anyhow "1.0"
+    | insert itertools "0.10"
+    | insert petgraph "0.6"
+    | insert regex "1.7"
+    | insert serde {version: "1.0" features: [derive]}
+    | insert serde_json "1.0"
+    | insert serde_yaml "0.9"
+  }
+  | save Cargo.toml
+}
